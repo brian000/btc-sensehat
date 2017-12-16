@@ -5,3 +5,8 @@ Prereqs:
 
 `pip install blockchain`  
 `apt-get install sense-hat`
+
+
+Run with:  
+
+`python btc-sensehat.py <address to watch>`
