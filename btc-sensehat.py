@@ -1,12 +1,11 @@
-#!/usr/bin/python
+#! /usr/bin/python2.7
 
 import sys
+from time import sleep
 from blockchain import blockexplorer
 from sense_hat import SenseHat
-from time import sleep
 
 add = str(sys.argv[1])
-print "watching", add, "for balance"
 
 sense = SenseHat()
 r = (255,0,0)
@@ -23,6 +22,17 @@ nope = [
     b, b, b, b, b, b, b, b,
     b, b, b, b, b, b, b, b,
     b, b, b, b, b, b, b, r
+]
+
+black = [
+    b, b, b, b, b, b, b, b,
+    b, b, b, b, b, b, b, b,
+    b, b, b, b, b, b, b, b,
+    b, b, b, b, b, b, b, b,
+    b, b, b, b, b, b, b, b,
+    b, b, b, b, b, b, b, b,
+    b, b, b, b, b, b, b, b,
+    b, b, b, b, b, b, b, b
 ]
 
 white = [
@@ -54,19 +64,18 @@ def checkbalance():
 
 while True:
     val = checkbalance()
-    print val
 
+#rip your retinas
     if val > 0:
-        print "must have found a block"
         for i in range(0,100000):
             sense.set_pixels(yep)
             sleep(0.05)
             sense.set_pixels(white)
             sleep(0.05)
+            sense.set_pixels(black)
+            sleep(0.05)
         exit()
 
     else:
-        print "nope, keep digging"
         sense.set_pixels(nope)
-
-    sleep(600)
+        exit()
