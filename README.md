@@ -13,7 +13,7 @@ Run with:
 
 For best results, add to your crontab  
 
-`*/10 * * * * python ~/btc-sensehat/btc-sensehat.py 328b82wtCvPfv7F8VgxHRTwQkAZxdoBHC7`
+`*/10 * * * * python ~/btc-sensehat/btc-sensehat.py <youraddress>`
 
 
 Donations to `328b82wtCvPfv7F8VgxHRTwQkAZxdoBHC7` or `0xb217d7609430951AB677e333cc0fcC39F3B47Aba` are appreciated!
